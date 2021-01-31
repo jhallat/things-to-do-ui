@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IBacklogItem } from './backlog-item';
 
 @Component({
   selector: 'app-backlog',
@@ -7,13 +8,16 @@ import { Component } from '@angular/core';
 })
 export class BacklogComponent {
   newItem = '';
-  backlogItems: any[] = [
-    {'description': 'Clean left side of studio',
-     'reoccuring': true},
-    {'description': '1 hour of painting',
-    'reoccuring': true},
-    {'description': '45 minutes of programming',
-     'reoccuring': true},
+  backlogItems: IBacklogItem[] = [
+    { backlogId: 1,
+      description: 'Clean left side of studio',
+      ongoing: true},
+    { backlogId: 2,
+      description: '1 hour of painting',
+      ongoing: true},
+    { backlogId: 3,
+      description: '45 minutes of programming',
+      ongoing: true},
   ];
 
   moveItem(): void {

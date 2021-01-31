@@ -1,0 +1,11 @@
+<div class="idea-container">
+    <h2>Ideas</h2>
+    <app-idea-input (ideaAdded)="onIdeaAdded($event)"></app-idea-input>
+    <div *ngIf="ideas && ideas.length">
+      <div *ngFor="let idea of ideas">
+        <div class="idea-item" >
+          {{ idea }}
+        </div>
+      </div>
+    </div>
+  </div>
