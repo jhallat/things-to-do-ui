@@ -17,6 +17,15 @@ export class IdeaInputComponent implements OnInit {
 
   onClick(): void {
     this.ideaAdded.emit(this.newIdea);
+    this.newIdea = '';
+  }
+
+  addDisplayValue() : string {
+    if (this.newIdea.length > 0) {
+      return 'inline';
+    } else {
+      return 'none';
+    }
   }
 
 }

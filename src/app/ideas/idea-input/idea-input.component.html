@@ -2,5 +2,5 @@
     <mat-form-field>
         <input matInput type="text" autocomplete="off" placeholder="Description" [(ngModel)]="newIdea" />
     </mat-form-field>
-    <button mat-button color="primary" (click)="onClick()">Add</button>
+    <button mat-button color="primary" (click)="onClick()" [style.display]="addDisplayValue()">Add</button>
 </div>

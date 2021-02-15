@@ -1,0 +1,19 @@
+.idea-item {
+    .idea-delete {
+        display: none;
+    }
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    &:hover {
+        background-color: #aaaaaa;
+        .idea-delete {
+            color: white;
+            display: block;
+        }
+    }
+}
+
