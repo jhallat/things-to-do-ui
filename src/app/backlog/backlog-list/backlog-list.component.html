@@ -3,7 +3,7 @@
     <app-backlog-input (backlogAdded)="onBacklogAdded($event)"></app-backlog-input>
      <div *ngIf="backlogs && backlogs.length" class="backlog-list">
         <div *ngFor="let backlog of backlogs">
-          <app-backlog-item [backlog] = backlog></app-backlog-item>
+          <app-backlog-item [backlog] = backlog (backlogDeleted)="onBacklogDeleted($event)"></app-backlog-item>
         </div>
     </div>
   </div>

@@ -1,7 +1,6 @@
 <div>
     <mat-form-field class="description-input">
-        <input matInput type="text" autocomplete="off" placeholder="Description" [(ngModel)]="newBacklog" />
+        <input matInput type="text" autocomplete="off" placeholder="Description" [(ngModel)]="newToDo" />
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="newOngoing">Ongoing</mat-checkbox>
     <button mat-button color="primary" (click)="onClick()" [style.display]="addDisplayValue()">Add</button>
 </div>

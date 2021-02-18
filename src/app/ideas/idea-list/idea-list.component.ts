@@ -31,4 +31,15 @@ export class IdeaListComponent implements OnInit {
 
   }
 
+  onIdeaDeleted(deletedIdea: IIdea) {
+    this.ideaService.deleteIdea(deletedIdea.userId, deletedIdea.createdTimestamp)
+      .subscribe({
+        next: data => {
+          let index: number = this.ideas.findIndex(idea => idea.userId == deletedIdea.userId && idea.createdTimestamp == deletedIdea.createdTimestamp);
+          this.ideas.splice(index, 1);
+        },
+        error: err => this.errorMessage = err
+      });
+  }
+
 }

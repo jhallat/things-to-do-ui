@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { IIdea } from '../idea';
 
 @Component({
@@ -10,10 +10,15 @@ export class IdeaItemComponent implements OnInit {
 
   @Input()
   idea!: IIdea;
+  @Output() ideaDeleted: EventEmitter<IIdea> = new EventEmitter<IIdea>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDeleteClick(idea: IIdea) {
+    this.ideaDeleted.emit(idea);
   }
 
 }

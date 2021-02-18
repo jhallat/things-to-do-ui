@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IBacklog } from '../backlog';
 
 @Component({
@@ -10,10 +10,15 @@ export class BacklogItemComponent implements OnInit {
 
   @Input()
   backlog!: IBacklog;
+  @Output() backlogDeleted: EventEmitter<IBacklog> = new EventEmitter<IBacklog>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDeleteClick(backlog: IBacklog) {
+    this.backlogDeleted.emit(backlog);
   }
 
 }

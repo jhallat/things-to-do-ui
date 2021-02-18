@@ -1,6 +1,10 @@
 <div class="backlog-item">
+    <fa-icon *ngIf="backlog.ongoing" class="backlog-ongoing" [icon]="['fas', 'clone']"></fa-icon>
     <div class="backlog-description">{{ backlog.description }}</div>
     <button mat-icon-button>
+        <fa-icon class="backlog-delete" [icon]="['fas','chevron-circle-right']"></fa-icon>
+    </button>  
+    <button mat-icon-button (click)="onDeleteClick(backlog)">
         <fa-icon class="backlog-delete" [icon]="['fas','trash-alt']"></fa-icon>
-    </button>    
+    </button> 
 </div>

@@ -22,16 +22,21 @@ export class BacklogService {
 
   addBacklog(newBacklog: IBacklog): Observable<IBacklog> {
     return this.http.post<IBacklog>(this.backlogUrl, newBacklog)
-    .pipe(
+      .pipe(
         tap(data => console.log("backlog: " + JSON.stringify(data))),
         catchError(this.handleError)
-    );
-}
+      );
+  }
+
+
+  deleteBacklog(userId: String, createdTimestamp: String): Observable<void> {
+    return this.http.delete<void>(`${this.backlogUrl}/${userId}/${createdTimestamp}`)
+  }
 
   private handleError(err: HttpErrorResponse) {
     console.error(err.message);
     return throwError(err.message);
   }
-  
+
 }
 

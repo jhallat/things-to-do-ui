@@ -1,0 +1,9 @@
+<div class="todo-container">
+    <h2>Today's To Do List</h2>
+    <app-todays-list-input (todoAdded)="onTodoAdded($event)"></app-todays-list-input>
+     <div *ngIf="todos && todos.length" class="todo-list">
+        <div *ngFor="let todo of todos">
+          <app-todays-list-item [todo] = todo ></app-todays-list-item>
+        </div>
+    </div>
+  </div>

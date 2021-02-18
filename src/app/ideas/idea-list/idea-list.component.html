@@ -3,7 +3,7 @@
     <app-idea-input (ideaAdded)="onIdeaAdded($event)"></app-idea-input>
      <div *ngIf="ideas && ideas.length" class="idea-list">
         <div *ngFor="let idea of ideas">
-          <app-idea-item [idea] = idea></app-idea-item>
+          <app-idea-item [idea] = idea (ideaDeleted)="onIdeaDeleted($event)"></app-idea-item>
         </div>
     </div>
   </div>
